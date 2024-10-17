@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color-body: hsl(0, 0%, 100%);
+    --bg-color-button: hsl(0, 0%, 100%);
+    --bg-color-button-focus: #02799D;
+    --bg-color-button-sounds: hsl(240, 9%, 89%);
+    --text-color: hsl(0, 0%, 0%);
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.dark {
+    --bg-color-body: hsl(0, 0%, 0%);
+    --bg-color-button-controls: none;
+    --bg-color-button-sounds: hsl(240, 9%, 89%);
+
+    --color-span: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 100%);
+}
+
+html.dark .ph-sun,
+html:not(.dark) .ph-moon {
+    display: none;
+}
+
+body {
+    background-color: var(--bg-color-body);
+    height: 100vh;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    place-content: center;
+}
+
+.controls .ph {
+    color: var(--text-color);
+}
+
+#toggle-mode {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+
+    font-size: 2.8rem;
+    color: var(--text-color);
+
+    cursor: pointer;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 19.2rem;
+    flex-wrap: wrap;
+}
+
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+}
+
+.time {
+    display: flex;
+    font-size: 12.6rem;
+    padding: 0;
+    margin: 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+.controls button {
+    font-size: 4.8rem;
+    border: none;
+    background-color: var(--bg-color-button-controls)
+}
+
+.controls button:hover {
+    cursor: pointer;
+}
+
+.sounds {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 3.2rem;
+}
+
+.sounds button {
+    display: grid;
+    place-content: center;
+    background-color: var(--bg-color-button-sounds);
+    height: 15.2rem;
+    width: 13.8rem;
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    font-size: 6.4rem;
+    transition: all 0.3s;
+}
+
+.sounds button:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+
+}
+
+.sounds button:hover {
+    background-color: var(--bg-color-button-focus);
+    color: white;
+
+}
+
+#controls-musics button:hover,
+#controls-musics button.selected {
+    background-color: var(--controls-music-activated);
+}
+
+span {
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
